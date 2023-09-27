@@ -88,6 +88,10 @@ header .container nav ul li a {
   white-space: nowrap;
 }
 
+header .container nav ul li a:hover {
+  color: var(--maincolor);
+}
+
 header .container .Chat-container {
   display: flex;
   align-items: center;
@@ -106,6 +110,11 @@ header .container .Chat-container button {
   background: var(--maincolor);
   color: var(--white);
   cursor: pointer;
+}
+
+header .container .Chat-container button:hover {
+  background: #eee;
+  color: var(--maincolor);
 }
 
 header .container .Toggle-Menu {
@@ -214,6 +223,11 @@ header .container .Toggle-Menu img {
   cursor: pointer;
 }
 
+.hero .container .Buttons .Hire:hover {
+  background: #eee;
+  color: var(--maincolor);
+}
+
 .hero .container .Buttons .cv {
   padding: 17px 33px;
   justify-content: center;
@@ -227,6 +241,10 @@ header .container .Toggle-Menu img {
   font-size: 20px;
   font-weight: 600;
   cursor: pointer;
+}
+
+.hero .container .Buttons .cv:hover {
+  background-color: #eee;
 }
 
 @media (max-width: 1200px) {
