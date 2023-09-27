@@ -1,12 +1,12 @@
-/* Variables */
+/* Vars */
 :root {
   --maincolor: #07f;
   --nav-links-color: #333;
   --white: #fff;
-  --dark-brown: #222;
 }
+/* Vars End */
 
-/* Global Reset */
+/* Global Values */
 * {
   padding: 0;
   margin: 0;
@@ -30,19 +30,47 @@ body {
   font-family: "Work Sans", sans-serif;
 }
 
-/* Container Styles */
 .container {
-  padding: 0 15px;
-  margin: 0 auto;
-  max-width: 1170px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
 }
+/* Small */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+/* Medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+/* Large */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+/* Global Values end */
 
-/* Header Styles */
+/* header start */
 header .container {
   padding-top: 32px;
+  position: relative;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
+}
+
+header .container nav {
+  display: flex;
+  position: relative;
   align-items: center;
+  width: 100%;
+  right: 0;
+  justify-content: flex-end;
 }
 
 header .container nav ul {
@@ -52,7 +80,6 @@ header .container nav ul {
 header .container nav ul li {
   padding-right: 40px;
 }
-
 header .container nav ul li a {
   color: var(--nav-links-color);
   font-size: 18px;
@@ -61,76 +88,110 @@ header .container nav ul li a {
   white-space: nowrap;
 }
 
+header .container .Chat-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  white-space: nowrap;
+}
+
 header .container .Chat-container button {
   padding: 17px 33px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
   font-size: 20px;
-  font-weight: 600;
   border-radius: 50px;
+  font-weight: 600;
   background: var(--maincolor);
   color: var(--white);
   cursor: pointer;
 }
 
-/* Toggle Menu for Mobile */
+header .container .Toggle-Menu {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: flex-end;
+  display: none;
+}
+
+header .container .Toggle-Menu img {
+  width: auto;
+  height: 37px;
+  cursor: pointer;
+}
+
 @media (max-width: 992px) {
-  header .container nav,
+  header .container nav {
+    display: none;
+  }
+
   header .container .Chat-container {
     display: none;
   }
 
   header .container .Toggle-Menu {
     display: flex;
-    justify-content: flex-end;
   }
 }
+/* header end */
 
-/* Hero Section Styles */
+/* hero */
+
+/* hero vars */
+.hero:root {
+  --dark-brown: #222;
+}
+/* hero vars end */
 .hero {
   padding: 100px 0;
-  position: relative;
 }
 
 .hero .container {
+  position: relative;
+}
+
+.hero .container,
+.hero .container .Buttons,
+.hero .container .Buttons .Hire,
+.hero .container .Buttons .cv {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
 }
 
 .pfp-image {
   position: absolute;
   right: 0;
+  width: fit-content;
   top: 0;
 }
 
 .pfp-image img {
-  width: 100%;
-  max-width: 300px;
-  height: auto;
+  width: 553px;
+  height: 560px;
+  flex-shrink: 0;
 }
-
-.hero .container .Welcome,
-.hero .container h1,
-.hero .container .Describtion {
+.hero .container .hero-content .Welcome,
+.hero .container .hero-content h1,
+.hero .container .hero-content .Describtion {
   color: var(--dark-brown);
 }
-
-.hero .container .Welcome {
+.hero .container .hero-content .Welcome {
   font-weight: 600;
   font-size: 25px;
 }
 
-.hero .container h1 {
+.hero .container .hero-content h1 {
   font-size: 60px;
   font-weight: 700;
   line-height: 75px;
 }
 
-.hero .container h1 span {
+.hero .container .hero-content h1 span {
   font-size: 70px;
   color: var(--maincolor);
 }
-
-.hero .container .Describtion {
+.hero .container .hero-content .Describtion {
   font-size: 25px;
   font-weight: 400;
   line-height: 35px;
@@ -140,8 +201,7 @@ header .container .Chat-container button {
   margin-top: 50px;
 }
 
-.hero .container .Buttons .Hire,
-.hero .container .Buttons .cv {
+.hero .container .Buttons .Hire {
   padding: 17px 33px;
   justify-content: center;
   align-items: center;
@@ -149,10 +209,26 @@ header .container .Chat-container button {
   color: var(--white);
   font-weight: 600;
   border-radius: 50px;
+  background: var(--maincolor);
+  margin-right: 44.36px;
   cursor: pointer;
 }
 
-/* Responsive for Smaller Screens */
+.hero .container .Buttons .cv {
+  padding: 17px 33px;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-shrink: 0;
+  border-radius: 50px;
+  border: 1px solid var(--maincolor);
+  background: var(--white);
+  color: var(--maincolor);
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
 @media (max-width: 1200px) {
   .hero .container {
     flex-direction: column-reverse;
@@ -160,14 +236,21 @@ header .container .Chat-container button {
   }
 
   .pfp-image {
+    position: relative;
     left: 50%;
     transform: translateX(-50%);
   }
 
-  .hero .container .Welcome,
-  .hero .container h1,
-  .hero .container h1 span,
-  .hero .container .Describtion,
+  .pfp-image img {
+    width: 100%; /* Make the image width 100% of the container */
+    max-width: 300px; /* Adjust the max width as needed */
+    height: auto; /* Maintain the aspect ratio */
+  }
+
+  .hero .container .hero-content .Welcome,
+  .hero .container .hero-content h1,
+  .hero .container .hero-content h1 span,
+  .hero .container .hero-content .Describtion,
   .hero .container .Buttons {
     text-align: center;
     margin: 20px 0;
@@ -179,8 +262,8 @@ header .container .Chat-container button {
     margin-bottom: 20px;
     width: 100%;
   }
-
   .hero .container .Buttons {
     display: block;
   }
 }
+/* hero end */
