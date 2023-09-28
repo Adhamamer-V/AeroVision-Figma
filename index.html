@@ -20,12 +20,12 @@
     <header>
       <div class="container">
         <div class="logo-container">
-          <img src="public/images/logo.svg" alt="Logo" />
+          <img draggable="false" src="public/images/logo.svg" alt="Logo" />
         </div>
         <nav>
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About Me</a></li>
+            <li><a class="active" href="#hero">Home</a></li>
+            <li><a href="#Abt-me">About Me</a></li>
             <li><a href="#">Services</a></li>
             <li><a href="#">Blog</a></li>
             <li><a href="#">Contact Me</a></li>
@@ -37,18 +37,18 @@
         </div>
 
         <div class="Toggle-Menu">
-          <img src="public/images/menu.svg" alt="" />
+          <img draggable="false" src="public/images/menu.svg" alt="" />
         </div>
       </div>
     </header>
     <!-- header end -->
 
     <!--Hero-->
-    <section class="hero">
+    <section id="hero" class="hero">
       <div class="container">
         <div class="hero-content">
           <div class="pfp-image">
-            <img src="/public/images/pfp.png" alt="" />
+            <img draggable="false" src="public/images/pfp.png" alt="" />
           </div>
           <div class="hero-text">
             <p class="Welcome">Welcome to my Portfolio</p>
@@ -101,5 +101,66 @@
       </div>
     </section>
     <!--Hero End-->
+
+    <!-- Software Section -->
+
+    <section class="Software-Section">
+      <div class="Sofware-content">
+        <img draggable="false" src="public/images/J-Query.svg" alt="" />
+        <img draggable="false" src="public/images/WordPress.svg" alt="" />
+        <img draggable="false" src="public/images/Less.svg" alt="" />
+        <img draggable="false" src="public/images/Sass.svg" alt="" />
+        <img draggable="false" src="public/images/Spotify.svg" alt="" />
+      </div>
+    </section>
+    <!-- Software Section End -->
+
+    <!-- About me Section -->
+    <section id="Abt-me" class="About-me-Section">
+      <div class="container">
+        <div class="About-content">
+          <div class="About-pfp">
+            <img draggable="false" src="public/images/About-pfp.png" alt="" />
+          </div>
+          <div class="About-right">
+            <p class="Heading-p">About Me</p>
+            <h1>
+              <span>20 Year’s Experience <br /></span>on Product Design
+            </h1>
+            <p class="About-des">
+              Hello there! I'm <span>Robert Junior</span>. I specialize in web
+              design and
+              <br />
+              development, and I'm deeply passionate and committed to my craft
+              <br />
+              With <span> 20 years</span> of experience as a professional
+              graphic designer
+            </p>
+            <div class="Swatches">
+              <button class="Skills">Main Skills</button>
+              <button class="A-E">Awards</button>
+              <button class="A-E">Education</button>
+            </div>
+            <div class="Work-skills">
+              <div class="ui">
+                <p class="skill-text">User Experience Design - UI/UX</p>
+                <div class="progress-bar UI-UX"></div>
+              </div>
+              <div class="development">
+                <p class="skill-text">
+                  Web & User Interface Design - Development
+                </p>
+                <div class="progress-bar DEV"></div>
+              </div>
+              <div class="animation">
+                <p class="skill-text">Interaction Design - Animation</p>
+                <div class="progress-bar Anim"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- About me Section end -->
   </body>
 </html>
